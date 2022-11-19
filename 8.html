@@ -15,7 +15,7 @@
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-class="lead" data-theme="gaia" class="lead" data-marpit-pagination="1" data-marpit-pagination-total="48" style="" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1>App通信任务</h1>
-<p>iOS应用开发过程中我们一般都是在应用层执行一下通信任务：</p>
+<p>iOS应用开发过程中我们一般都是在应用层执行以下通信任务：</p>
 <ul>
 <li>访问Web服务</li>
 <li>访问FTP</li>
@@ -87,7 +87,7 @@
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="48" style="" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1>加载本地内容</h1>
-<p><code>WKWebView</code>不仅可以加载URL，也可以通过<code>loadFileURL</code>加载本地的HTML文件里内容，你需要提供给这个方法提供一个指向你的Buddle中的html文件的url。例如你想加载你的buddle中的<code>test.html</code>的文件：</p>
+<p><code>WKWebView</code>不仅可以加载URL，也可以通过<code>loadFileURL</code>加载本地的HTML文件里内容，你需要提供给这个方法一个指向你的Buddle中的html文件的url。例如你想加载你的buddle中的<code>test.html</code>的文件：</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-swift"><span class="hljs-keyword">func</span> <span class="hljs-title function_">loadLocalContent</span>() {
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> url <span class="hljs-operator">=</span> <span class="hljs-type">Bundle</span>.main.url(forResource: <span class="hljs-string">&quot;test&quot;</span>, withExtension: <span class="hljs-string">&quot;html&quot;</span>) {
             webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
@@ -124,7 +124,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>访问控制</h2>
-<p><code>WKWebView</code>默认是允许对所有网站对访问，但是你可以通过实现<code>WKNavigationDelegate</code>代理，来阻塞对于某些页面对访问：<br />
+<p><code>WKWebView</code>默认是允许对所有网站的访问，但是你可以通过实现<code>WKNavigationDelegate</code>代理，来阻塞对于某些页面的访问：<br />
 首先，让<code>ViewController</code>遵循<code>WKNavigationDelegate</code></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-swift"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ViewController</span>: <span class="hljs-title class_">UIViewController</span>, <span class="hljs-title class_">WKNavigationDelegate</span> {
 </code></pre>
@@ -310,7 +310,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/8/fetch-data-ui.png&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="30" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2>示例</h2>
-<p>我们通过一个例子展示从一个URL Session直接创建一个data task来完成将数据拉取到内存的操作。首先我们设计应用的UI界面，包括一个URL输入狂，一个按钮，一个展示结果的textview<br />
+<p>我们通过一个例子展示从一个URL Session直接创建一个data task来完成将数据拉取到内存的操作。首先我们设计应用的UI界面，包括一个URL输入框，一个按钮，一个展示结果的textview<br />
 </p>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="48" style="" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="31" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -397,7 +397,7 @@
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="34" data-marpit-pagination-total="48" style="" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="35" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1>上传数据</h1>
-<p>许多应用会向服务器上传数据，包括一些文件(图片、文档)或者是JSON格式的结构化数据。对于这中任务，我们使用<code>URLSessionUploadTask</code>来完成。我们通过一个例子展示如何向服务器发送JSON格式的数据。</p>
+<p>许多应用会向服务器上传数据，包括一些文件(图片、文档)或者是JSON格式的结构化数据。对于这种任务，我们使用<code>URLSessionUploadTask</code>来完成。我们通过一个例子展示如何向服务器发送JSON格式的数据。</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="36" data-marpit-pagination-total="48" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h2>举个例子：Uploading Data</h2>

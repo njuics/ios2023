@@ -176,7 +176,7 @@ thread.start()
 <h1>Dispatch Queues</h1>
 <p>Dispatch Queues 是基于C语言提供的并发机制设计的，用于执行自定义任务的方法。Dispatch Queue总是FIFO的</p>
 <ul>
-<li>顺序的： 一次只执行一个任务，知道它结束，才去除下一个任务继续执行</li>
+<li>顺序的： 一次只执行一个任务，直到它结束，才去从下一个任务继续执行</li>
 <li>并发的： 尽可能多的同时执行很多任务，而不必等待已经开始的任务结束</li>
 </ul>
 </section>
@@ -317,7 +317,7 @@ thread.start()
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="34" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1>Block Operation</h1>
-<p>Block Operation 允许你一次性并发地执行一个或者多个block。在下面当代码中，我们通过<code>start</code>异步地执行了Block中当代码，但是我们直接在主线程中执行，所以会阻塞主线程。</p>
+<p>Block Operation 允许你一次性并发地执行一个或者多个block。在下面当代码中，我们通过<code>start</code>异步地执行了Block中的代码，但是我们直接在主线程中执行，会阻塞主线程。</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-swift"><span class="hljs-keyword">let</span> operation <span class="hljs-operator">=</span> <span class="hljs-type">BlockOperation</span>{
     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span><span class="hljs-operator">...</span><span class="hljs-number">10</span> {
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello <span class="hljs-subst">\(i)</span>&quot;</span>)
@@ -383,7 +383,7 @@ operation.start()
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="40" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
 <h1>Operation Queues</h1>
-<p>之前我们说过，Operation Queues是对GCD对高级抽象，通过使用Operation Queue，你可以看到Operation的真正能力。你无需手动通过start来启动一个Operation，而是将Operation交付给Operaion Queue来执行。<br />
+<p>之前我们说过，Operation Queues是对GCD的高级抽象，通过使用Operation Queue，你可以看到Operation的真正能力。你无需手动通过start来启动一个Operation，而是将Operation交付给Operaion Queue来执行。<br />
 x</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="41" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;">
@@ -407,7 +407,7 @@ operationQueue.addOperation(blockOperation2)
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="42" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/operation-queue.png&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="70%" height="720"><section id="42" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="42" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h1>Add Operations</h1>
 
-<p>我们创建了两个operaion，并且将它们添加到了operation queue中。Operation queue在同一个后台线程中启动它们。我们不需要显示的调用operation的start方法，而且它们是并发执行的。</p>
+<p>我们创建了两个operaion，并且将它们添加到了operation queue中。Operation queue在同一个后台线程中启动它们。我们不需要显式的调用operation的start方法，而且它们是并发执行的。</p>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="42" data-marpit-pagination-total="51" style="" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="43" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/operation-queue2.png&quot;);background-size:80%;"></figure></div></section></foreignObject><foreignObject width="70%" height="720"><section id="43" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="43" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h1>Add Operations</h1>
@@ -463,7 +463,7 @@ operationQueue.addOperation(blockOperation2)
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="47" data-marpit-pagination-total="51" style="" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="48" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/7/operation-result2.gif&quot;);background-size:contain;"></figure></div></section></foreignObject><foreignObject width="70%" height="720"><section id="48" data-paginate="true" data-background-color="#fff" data-theme="gaia" data-marpit-pagination="48" data-marpit-pagination-total="51" style="--paginate:true;--background-color:#fff;--theme:gaia;background-color:#fff;background-image:none;--marpit-advanced-background-split:30%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h1>添加依赖</h1>
-<p>可以为每个operation添加依赖，控制图片加载的顺序，例如从按照从上到下，从左到右的顺序加载图片：</p>
+<p>可以为每个operation添加依赖，控制图片加载的顺序，例如按照从上到下，从左到右的顺序加载图片：</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-swift">operations[<span class="hljs-number">2</span>].addDependency(operations[<span class="hljs-number">1</span>])
 operations[<span class="hljs-number">3</span>].addDependency(operations[<span class="hljs-number">2</span>])
 operations[<span class="hljs-number">4</span>].addDependency(operations[<span class="hljs-number">3</span>])
